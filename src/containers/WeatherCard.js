@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class WeatherCard extends Component {
   render() {
     var daysWeather = this.props.weather.map(weather => (
-      weather.main
+      <h3>{weather.description}</h3>
     ))
 
     return (

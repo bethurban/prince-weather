@@ -19,7 +19,7 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-         weather: data.list
+         weather: data.list.slice(0,5)
        })
      })
   }
