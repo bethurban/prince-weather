@@ -6,7 +6,7 @@ class Weather extends Component {
   render() {
 
     var weatherCards = this.props.weather.map(day => (
-      <WeatherCard weather={day.weather} />
+      <WeatherCard day={day.dt_txt} weather={day.weather[0]} />
     ));
 
     return (

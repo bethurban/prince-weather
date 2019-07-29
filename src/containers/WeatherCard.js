@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 
 class WeatherCard extends Component {
+
   render() {
-    var daysWeather = this.props.weather.map(weather => (
-      <h3>{weather.description}</h3>
-    ))
 
     return (
       <div>
-        { daysWeather }
+        <h2>{this.props.day}</h2>
+        <h3>{this.props.weather.main}</h3>
+        <p>{this.props.weather.description}</p>
       </div>
+
     )
   }
 }
