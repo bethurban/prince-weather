@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import WeatherCard from './WeatherCard.js';
 
 class Weather extends Component {
   render() {
     return (
       <div>
-        Weather container
+        <WeatherCard />
+        <WeatherCard />
+        <WeatherCard />
+        <WeatherCard />
+        <WeatherCard />
+        <WeatherCard />
+        <WeatherCard />
       </div>
     )
   }
