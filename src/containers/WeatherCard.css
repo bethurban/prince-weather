@@ -9,3 +9,11 @@
   height: 100%;
   border-radius: 50px;
 }
+
+.date h2 {
+  font-size: 35px;
+}
+
+.details h2 {
+  font-size: 20px;
+}

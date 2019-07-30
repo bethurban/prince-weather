@@ -41,6 +41,8 @@ class WeatherCard extends Component {
         </div>
         <div class="details">
           <h2>{this.props.weather.description}</h2>
+          <h2>High: {this.props.max}&#176; F</h2>
+          <h2>Low: {this.props.min}&#176; F</h2>
         </div>
       </div>
 
