@@ -32,11 +32,15 @@ class WeatherCard extends Component {
     }
 
     return (
-      <div class="card">
-        <h2>{date()}</h2>
-        {image}
-        <h3>{this.props.weather.main}</h3>
-        <p>{this.props.weather.description}</p>
+      <div>
+        <div class="date">
+          <h2>{date()}</h2>
+        </div>
+        <div class="card">
+          {image}
+          <h3>{this.props.weather.main}</h3>
+          <p>{this.props.weather.description}</p>
+        </div>
       </div>
 
     )
