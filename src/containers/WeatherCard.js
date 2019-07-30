@@ -18,17 +18,17 @@ class WeatherCard extends Component {
     }
 
     if (this.props.weather.id === 800) {
-      image = <img src={Clear} alt="Prince" height="200" width="200"></img>
+      image = <img src={Clear} alt="Prince"></img>
     } else if (this.props.weather.id >= 801 && this.props.weather.id <= 804) {
-      image = <img src={Clouds} alt="Prince" height="200" width="200"></img>
+      image = <img src={Clouds} alt="Prince"></img>
     } else if (this.props.weather.id >= 600 && this.props.weather.id <= 622) {
-      image = <img src={Snow} alt="Prince" height="200" width="200"></img>
+      image = <img src={Snow} alt="Prince"></img>
     } else if (this.props.weather.id >= 300 && this.props.weather.id <= 321) {
-      image = <img src={Rain} alt="Prince" height="200" width="200"></img>
+      image = <img src={Rain} alt="Prince"></img>
     } else if (this.props.weather.id >= 500 && this.props.weather.id <= 531) {
-      image = <img src={Rain} alt="Prince" height="200" width="200"></img>
+      image = <img src={Rain} alt="Prince"></img>
     } else if (this.props.weather.id >= 200 && this.props.weather.id <= 232) {
-      image = <img src={Storm} alt="Prince" height="200" width="200"></img>
+      image = <img src={Storm} alt="Prince"></img>
     }
 
     return (
@@ -38,8 +38,10 @@ class WeatherCard extends Component {
         </div>
         <div class="card">
           {image}
-          <h3>{this.props.weather.main}</h3>
-          <p>{this.props.weather.description}</p>
+        </div>
+        <div class="details">
+          <h2>{this.props.weather.main}</h2>
+          <h3>{this.props.weather.description}</h3>
         </div>
       </div>
 
