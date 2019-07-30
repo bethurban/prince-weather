@@ -14,12 +14,12 @@ class App extends Component {
 
   componentDidMount() {
     const API_KEY = process.env.REACT_APP_APIKEY
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=07040,us&APPID=${API_KEY}`)
+    fetch(`https://api.weatherbit.io/v2.0/forecast/daily?key=${API_KEY}&units=I&days=5&postal_code=07040&country=US`)
       .then(response => response.json())
       .then(data => {
-        console.log("Data:", data.list)
+        console.log("Data:", data.data)
         this.setState({
-         weather: data.list.slice(0,5)
+         weather: data.data
        })
      })
   }
