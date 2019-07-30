@@ -14,7 +14,7 @@ class App extends Component {
 
   componentDidMount() {
     const API_KEY = process.env.REACT_APP_APIKEY
-    fetch(`https://api.weatherbit.io/v2.0/forecast/daily?key=${API_KEY}&units=I&days=5&postal_code=07040&country=US`)
+    fetch(`https://api.weatherbit.io/v2.0/forecast/daily?key=${API_KEY}&units=I&days=5&postal_code=85641&country=US`)
       .then(response => response.json())
       .then(data => {
         console.log("Data:", data.data)
