@@ -40,8 +40,7 @@ class App extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>Zip code: </label>
           <input type="text" value={this.state.zip} onChange={this.handleChange} />
-          <br />
-          <input type="submit" value="Purple Rain?" />
+          <button type="submit" class="button">Purple Rain?</button>
         </form>
         <Weather weather={this.state.weather} />
       </div>
