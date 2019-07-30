@@ -17,6 +17,7 @@ class App extends Component {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=07040,us&APPID=${API_KEY}`)
       .then(response => response.json())
       .then(data => {
+        console.log("Data:", data.list)
         this.setState({
          weather: data.list.slice(0,5)
        })
