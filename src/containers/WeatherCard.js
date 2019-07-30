@@ -4,6 +4,7 @@ import Clouds from '../images/clouds.jpg';
 import Rain from '../images/rain.jpeg';
 import Snow from '../images/snow.jpg';
 import Storm from '../images/storm.jpg';
+import './WeatherCard.css';
 
 class WeatherCard extends Component {
 
@@ -31,7 +32,7 @@ class WeatherCard extends Component {
     }
 
     return (
-      <div>
+      <div class="card">
         <h2>{date()}</h2>
         {image}
         <h3>{this.props.weather.main}</h3>

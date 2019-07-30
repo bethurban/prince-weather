@@ -2,9 +2,9 @@
   text-align: center;
   font-family: 'still_time', Arial, sans-serif;
   letter-spacing: 3px;
+  color: #9663C4;
 }
 
-h1 {
+.App h1 {
   font-size: 60px;
-  color: "#9663C4";
 }
