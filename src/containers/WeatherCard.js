@@ -13,8 +13,8 @@ class WeatherCard extends Component {
     var image
 
     const date = () => {
-      var day = new Date(this.props.day).toString().split(" ")
-      return day.slice(0,4).join(" ")
+      var day = new Date(this.props.day.replace(/-/g, '\/'));
+      return day.toString().split(" ").slice(0,4).join(" ")
     }
 
     if (parseInt(this.props.weather.code) === 800) {

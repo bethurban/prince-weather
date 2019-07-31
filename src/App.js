@@ -26,6 +26,7 @@ class App extends Component {
     fetch(`https://api.weatherbit.io/v2.0/forecast/daily?key=${API_KEY}&units=I&days=5&postal_code=${this.state.zip}&country=US`)
       .then(response => response.json())
       .then(data => {
+        // debugger
         console.log("Data:", data.data)
         this.setState({
          weather: data.data
