@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Clear from '../images/clear.jpg';
 import Clouds from '../images/clouds.jpg';
+import Clouds2 from '../images/clouds2.jpg';
 import Rain from '../images/rain.jpeg';
 import Snow from '../images/snow.jpg';
 import Storm from '../images/storm.jpg';
@@ -10,7 +11,11 @@ class WeatherCard extends Component {
 
   render() {
 
-    var image
+    var image;
+
+    const clouds = [Clouds, Clouds2];
+
+    var randomClouds = clouds[Math.floor(Math.random()*clouds.length)];
 
     const date = () => {
       var day = new Date(this.props.day.replace(/-/g, '\/'));
@@ -20,7 +25,7 @@ class WeatherCard extends Component {
     if (parseInt(this.props.weather.code) === 800) {
       image = <img src={Clear} alt="Prince"></img>
     } else if (parseInt(this.props.weather.code) >= 801 && parseInt(this.props.weather.code) <= 804) {
-      image = <img src={Clouds} alt="Prince"></img>
+      image = <img src={randomClouds} alt="Prince"></img>
     } else if (parseInt(this.props.weather.code) >= 600 && parseInt(this.props.weather.code) <= 622) {
       image = <img src={Snow} alt="Prince"></img>
     } else if (parseInt(this.props.weather.code) >= 300 && parseInt(this.props.weather.code) <= 321) {
