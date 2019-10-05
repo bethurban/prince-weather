@@ -8,7 +8,7 @@ class Weather extends Component {
 
     var weatherCards = this.props.weather.map(day => (
       <div class="column">
-        <WeatherCard day={day.valid_date} weather={day.weather} max={day.max_temp} min={day.min_temp} />
+        <WeatherCard day={day.valid_date} weather={day.weather} max={day.max_temp} min={day.min_temp} submitted={this.props.submitted} />
       </div>
     ));
 

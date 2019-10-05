@@ -14,9 +14,22 @@ class WeatherCard extends Component {
 
     var image;
 
+    var setImage;
+
     const clear = [Clear, Clear2];
 
     const clouds = [Clouds, Clouds2];
+
+    const randomImage = (imgArr) => {
+      let random
+      if (this.props.submitted) {
+        random = imgArr[Math.floor(Math.random()*imgArr.length)];
+        setImage = random;
+      } else {
+        random = setImage;
+      }
+      return random;
+    };
 
     var randomClear = clear[Math.floor(Math.random()*clear.length)];
 
@@ -28,9 +41,9 @@ class WeatherCard extends Component {
     }
 
     if (parseInt(this.props.weather.code) === 800) {
-      image = <img src={randomClear} alt="Prince"></img>
+      image = <img src={randomImage(clear)} alt="Prince"></img>
     } else if (parseInt(this.props.weather.code) >= 801 && parseInt(this.props.weather.code) <= 804) {
-      image = <img src={randomClouds} alt="Prince"></img>
+      image = <img src={randomImage(clouds)} alt="Prince"></img>
     } else if (parseInt(this.props.weather.code) >= 600 && parseInt(this.props.weather.code) <= 622) {
       image = <img src={Snow} alt="Prince"></img>
     } else if (parseInt(this.props.weather.code) >= 300 && parseInt(this.props.weather.code) <= 321) {
@@ -55,7 +68,6 @@ class WeatherCard extends Component {
           <h2>Low: {this.props.min}&#176; F</h2>
         </div>
       </div>
-
     )
   }
 }

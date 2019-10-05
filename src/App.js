@@ -9,7 +9,8 @@ class App extends Component {
 
     this.state = {
       weather: [],
-      zip: ''
+      zip: '',
+      submitted: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -17,7 +18,10 @@ class App extends Component {
   }
 
   handleChange(event) {
-    this.setState({zip: event.target.value})
+    this.setState({
+      zip: event.target.value,
+      submitted: false
+    })
   }
 
   handleSubmit(event) {
@@ -27,9 +31,9 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         // debugger
-        console.log("Data:", data.data)
         this.setState({
-         weather: data.data
+         weather: data.data,
+         submitted: true
        })
      })
   }
@@ -44,7 +48,7 @@ class App extends Component {
           <br />
           <button type="submit" class="button">Purple Rain?</button>
         </form>
-        <Weather weather={this.state.weather} />
+        <Weather weather={this.state.weather} submitted={this.state.submitted} />
       </div>
     );
   }
