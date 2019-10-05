@@ -14,26 +14,26 @@ class WeatherCard extends Component {
 
     var image;
 
-    var setImage;
-
-    const clear = [Clear, Clear2];
-
-    const clouds = [Clouds, Clouds2];
-
-    const randomImage = (imgArr) => {
-      let random
-      if (this.props.submitted) {
-        random = imgArr[Math.floor(Math.random()*imgArr.length)];
-        setImage = random;
-      } else {
-        random = setImage;
-      }
-      return random;
-    };
-
-    var randomClear = clear[Math.floor(Math.random()*clear.length)];
-
-    var randomClouds = clouds[Math.floor(Math.random()*clouds.length)];
+    // var setImage;
+    //
+    // const clear = [Clear, Clear2];
+    //
+    // const clouds = [Clouds, Clouds2];
+    //
+    // const randomImage = (imgArr) => {
+    //   let random
+    //   if (this.props.submitted) {
+    //     random = imgArr[Math.floor(Math.random()*imgArr.length)];
+    //     setImage = random;
+    //   } else {
+    //     random = setImage;
+    //   }
+    //   return random;
+    // };
+    //
+    // var randomClear = clear[Math.floor(Math.random()*clear.length)];
+    //
+    // var randomClouds = clouds[Math.floor(Math.random()*clouds.length)];
 
     const date = () => {
       var day = new Date(this.props.day.replace(/-/g, '\/'));
@@ -41,9 +41,11 @@ class WeatherCard extends Component {
     }
 
     if (parseInt(this.props.weather.code) === 800) {
-      image = <img src={randomImage(clear)} alt="Prince"></img>
+      image = <img src={Clear} alt="Prince"></img>
+      // image = <img src={randomImage(clear)} alt="Prince"></img>
     } else if (parseInt(this.props.weather.code) >= 801 && parseInt(this.props.weather.code) <= 804) {
-      image = <img src={randomImage(clouds)} alt="Prince"></img>
+      image = <img src={Clouds} alt="Prince"></img>
+      // image = <img src={randomImage(clouds)} alt="Prince"></img>
     } else if (parseInt(this.props.weather.code) >= 600 && parseInt(this.props.weather.code) <= 622) {
       image = <img src={Snow} alt="Prince"></img>
     } else if (parseInt(this.props.weather.code) >= 300 && parseInt(this.props.weather.code) <= 321) {
